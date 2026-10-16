@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "School Zones for Trade Me",
+  "short_name": "School Zones",
+  "version": "0.1.0",
+  "description": "Draw NZ school enrolment zone boundaries on the Trade Me property map. Search a school, see its zone.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://services.arcgis.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.trademe.co.nz/*"
+      ],
+      "js": [
+        "src/hook.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.trademe.co.nz/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "School Zones for Trade Me",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  }
+}
