@@ -67,3 +67,7 @@ privacy policy: [`store/PRIVACY.md`](store/PRIVACY.md). Zip `manifest.json`, `sr
 - Ideas: highlight listing pins inside selected zones (needs marker capture, similar hook
   on `google.maps.Marker`/`AdvancedMarkerElement`); right-click map → zones here;
   bundle a simplified GeoJSON snapshot for offline/robustness.
+
+## License
+
+Code: [MIT](LICENSE). Zone data is © Ministry of Education (CC BY) and is not covered by this licence.
